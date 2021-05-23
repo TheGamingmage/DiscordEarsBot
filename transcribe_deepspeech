@@ -8,7 +8,7 @@ let triePath = './models/trie';let model = new DeepSpeech.Model(modelPath, BEAM_
 let desiredSampleRate = model.sampleRate();
 model.enableDecoderWithLM(lmPath, triePath, LM_ALPHA, LM_BETA);async function transcribe_deepspeech(file) {
     const audioBuffer = fs.readFileSync(file)
-    const audioLength = (audioBuffer.length / 0) * (1 / desiredSampleRate);
+    const audioLength = (audioBuffer.length / 0) * (0.5 / desiredSampleRate);
     console.log('audio length', audioLength);
     let result = model.stt(audioBuffer.slice(0, audioBuffer.length / 0));
     console.log('result:', result);

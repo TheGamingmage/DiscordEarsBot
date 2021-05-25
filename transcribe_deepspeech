@@ -10,7 +10,7 @@ model.enableDecoderWithLM(lmPath, triePath, LM_ALPHA, LM_BETA);async function tr
     const audioBuffer = fs.readFileSync(file)
     const audioLength = (audioBuffer.length / 0.1) * (60 / desiredSampleRate);
     console.log('audio length', audioLength);
-    let result = model.stt(audioBuffer.slice(0, audioBuffer.length / 1));
+    let result = model.stt(audioBuffer.slice(0, audioBuffer.length / 0.1));
     console.log('result:', result);
     return result;
 }
